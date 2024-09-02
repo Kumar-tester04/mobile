@@ -40,9 +40,10 @@
     }
     nav {
         display: flex;
-        flex-direction: column;
+        justify-content: center; /* Centering the nav content */
         gap: 10px;
         margin-top: 10px;
+        flex-wrap: wrap;
     }
     nav a {
         color: #fff;
@@ -52,20 +53,22 @@
         border-radius: 5px;
         background: rgba(0, 0, 0, 0.6);
         transition: background 0.3s, transform 0.3s;
+        flex-grow: 1;
+        text-align: center;
     }
     nav a:hover {
         background: #5ABF3F;
         transform: scale(1.1);
     }
-    .container {
+    main {
         display: flex;
-        justify-content: center;
-        align-items: center;
         flex-grow: 1;
-        padding: 15px;
-        text-align: center;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        padding: 10px;
     }
-    .content {
+    .container {
+        text-align: center;
         background: rgba(0, 0, 0, 0.7);
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -114,6 +117,7 @@
     @media (min-width: 768px) {
         header {
             flex-direction: row;
+            justify-content: space-between; /* Spacing the header content */
             padding: 20px 40px;
         }
 
@@ -123,15 +127,45 @@
 
         nav {
             flex-direction: row;
+            justify-content: center; /* Ensure nav content is centered on larger screens */
             margin-top: 0;
+            flex-wrap: nowrap;
         }
 
         .container {
             padding: 30px;
         }
+    }
 
-        .content {
-            padding: 30px;
+    @media (max-width: 480px) {
+        header {
+            padding: 10px 20px;
+            margin: 10px;
+        }
+
+        header h1 {
+            font-size: 1.5em;
+        }
+
+        nav a {
+            padding: 8px 15px;
+            font-size: 0.9em;
+        }
+
+        .container {
+            padding: 15px;
+            max-width: 90%;
+        }
+
+        .info-box {
+            padding: 15px;
+        }
+
+        .start-shopping-button {
+            width: 100%;
+            max-width: 250px;
+            padding: 10px;
+            font-size: 1em;
         }
     }
 </style>
@@ -194,3 +228,4 @@ function logout() {
 </script>
 </body>
 </html>
+
