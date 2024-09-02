@@ -39,6 +39,7 @@
             margin: 10px 20px;
             transition: transform 0.3s ease-in-out;
             position: relative;
+            z-index: 10;
         }
         header:hover {
             transform: perspective(600px) rotateX(2deg) rotateY(2deg);
@@ -62,6 +63,7 @@
             border-radius: 5px;
             background: rgba(0, 0, 0, 0.6);
             transition: background-color 0.3s ease, transform 0.3s ease;
+            z-index: 20;
         }
         nav a:hover {
             background-color: #5ABF3F;
@@ -72,6 +74,7 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
+            z-index: 20;
         }
         .hamburger div {
             width: 25px;
@@ -88,6 +91,7 @@
             align-items: center;
             padding: 20px;
             text-align: center;
+            z-index: 1;
         }
         .container.active {
             display: flex;
@@ -171,6 +175,7 @@
                 display: none;
                 border-radius: 8px;
                 padding: 10px 0;
+                z-index: 20;
             }
             nav.active {
                 display: flex;
@@ -248,43 +253,35 @@
             <ul>
                 <li><strong>Efficiency:</strong> Say goodbye to long checkout lines. With Self-Billing, billing is quick, easy, and hassle-free.</li>
                 <li><strong>Convenience:</strong> Shop at your own pace. Our self-billing system allows you to scan and pay for items effortlessly, right from your smartphone.</li>
-                <li><strong>Innovation:</strong> We're at the forefront of retail technology, constantly evolving to meet the changing needs of the industry.</li>
-                <li><strong>Customer Satisfaction:</strong> Your satisfaction is our priority. We're dedicated to delivering top-notch service and support at every step of the way.</li>
+                <li><strong>Innovation:</strong> We're at the forefront of retail technology, constantly evolving to meet the changing needs of both retailers and customers.</li>
+                <li><strong>Customer Satisfaction:</strong> Our solution is designed with the customer in mind, ensuring a smooth and enjoyable shopping experience.</li>
             </ul>
-            <h3>How It Works</h3>
-            <ol>
-                <li><strong>Scan:</strong> Use our app to scan the barcode of each item you wish to purchase.</li>
-                <li><strong>Review:</strong> Double-check your selections and make any necessary adjustments.</li>
-                <li><strong>Pay:</strong> Complete your transaction securely using your preferred payment method.</li>
-                <li><strong>Go:</strong> Receive your digital receipt and exit the store without waiting in line.</li>
-            </ol>
-            <input type="button" value="Start Shopping" onclick="showContainer('login-container')">
+            <p>Join us on this exciting journey to redefine the retail landscape. Experience the future of shopping with Self-Billing.</p>
         </div>
     </div>
 
     <!-- Login Container -->
     <div class="container" id="login-container">
         <div class="content">
-            <h2>Login</h2>
-            <form id="login-form">
-                <input type="text" id="username" placeholder="Username" required>
-                <input type="password" id="password" placeholder="Password" required>
+            <h2>Login to Your Account</h2>
+            <form action="#" method="POST">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
                 <input type="submit" value="Login">
             </form>
+            <p>Don't have an account? <a href="#" onclick="showContainer('register-container')">Sign up here</a>.</p>
         </div>
     </div>
 
-    <!-- Register Container -->
+    <!-- Registration Container -->
     <div class="container" id="register-container">
         <div class="content">
-            <h2>Sign Up</h2>
-            <form id="register-form">
-                <input type="text" id="full-name" placeholder="Full Name" required>
-                <input type="text" id="new-username" placeholder="Username" required>
-                <input type="tel" id="phone-number" placeholder="Phone Number" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="password" id="new-password" placeholder="Password" required>
-                <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            <h2>Create a New Account</h2>
+            <form action="#" method="POST">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="password" name="password" placeholder="Password" required>
                 <input type="submit" value="Sign Up">
             </form>
         </div>
@@ -294,11 +291,9 @@
     <div class="container" id="about-container">
         <div class="content">
             <h2>About Us</h2>
-            <p>Welcome to Self-Billing Retail Solutions, where we're dedicated to revolutionizing the retail experience through innovative self-billing technology. With a deep understanding of the challenges faced by both retailers and customers in traditional manual billing processes, we set out on a mission to transform the way people shop.</p>
-            <p>Our journey began with a simple yet powerful idea: to streamline the checkout process by leveraging cutting-edge technology. We envisioned a future where customers could breeze through their shopping journey without the frustration of long queues and tedious manual billing procedures.</p>
-            <p>Driven by this vision, we embarked on the development of a self-billing system that combines the convenience of barcode scanning with an intuitive app interface. Our solution empowers shoppers to effortlessly scan products, view detailed information, and complete transactions seamlessly—all from the palm of their hand.</p>
-            <p>But our commitment doesn't stop there. We understand that success in retail hinges not only on efficiency but also on exceptional customer experience. That's why Self-Billing Retail Solutions is dedicated to continuously refining and enhancing our technology to meet the evolving needs of both retailers and consumers.</p>
-            <p>With a focus on scalability, reliability, and security, Self-Billing Retail Solutions is paving the way for a new era of retail—one where shopping is not just a transaction but an experience to be enjoyed.</p>
+            <p>Self-Billing is a cutting-edge retail technology company dedicated to transforming the shopping experience through innovative self-billing solutions. Our platform empowers retailers to streamline operations and delight customers by making checkout faster, more convenient, and more efficient.</p>
+            <p>Our team of experts is committed to continuous innovation, ensuring that our technology remains at the forefront of the retail industry. We believe in a future where shopping is seamless and enjoyable, where customers have the freedom to shop at their own pace, and where retailers can operate with greater efficiency and profitability.</p>
+            <p>We invite you to explore our platform and discover how Self-Billing can revolutionize your retail business.</p>
         </div>
     </div>
 
@@ -306,137 +301,40 @@
     <div class="container" id="contact-container">
         <div class="content">
             <h2>Contact Us</h2>
-            <form id="contact-form">
-                <input type="text" id="contact-name" placeholder="Your Name" required>
-                <input type="email" id="contact-email" placeholder="Your Email" required>
-                <input type="text" id="contact-subject" placeholder="Subject" required>
-                <textarea id="contact-message" rows="5" placeholder="Your Message" required></textarea>
-                <input type="submit" value="Send Message">
-            </form>
+            <p>We'd love to hear from you! Whether you have questions about our platform, need support, or want to explore partnership opportunities, our team is here to assist you.</p>
+            <p><strong>Email:</strong> support@selfbilling.com</p>
+            <p><strong>Phone:</strong> +123-456-7890</p>
+            <p><strong>Address:</strong> 123 Retail Street, Shopping City, SC 12345</p>
+            <p>Follow us on social media for the latest updates and news:</p>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Self-Billing System. All rights reserved.</p>
+        <p>&copy; 2024 Self-Billing. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
 
-    <!-- JavaScript for Interactivity -->
     <script>
-        // Toggle Navigation Menu on Mobile
-        function toggleMenu() {
-            const navMenu = document.getElementById('nav-menu');
-            navMenu.classList.toggle('active');
-        }
-
-        // Array of valid credentials
-        const validCredentials = [
-            { username: "User", password: "Password" },
-            { username: "admin", password: "admin123" },
-            { username: "Kumar", password: "Kumar123" }
-        ];
-
-        // Handle Login Form Submission
-        document.getElementById("login-form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent form from submitting
-
-            const username = document.getElementById("username").value.trim();
-            const password = document.getElementById("password").value.trim();
-
-            // Validate credentials
-            const isValid = validCredentials.some(cred => cred.username === username && cred.password === password);
-
-            if (isValid) {
-                window.location.href = "dashboard.html"; // Redirect to dashboard
-            } else {
-                alert("Invalid username or password. Please try again.");
-            }
-        });
-
-        // Handle Register Form Submission
-        document.getElementById("register-form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent form from submitting
-
-            const password = document.getElementById("new-password").value;
-            const confirmPassword = document.getElementById("confirm-password").value;
-
-            if (password === confirmPassword) {
-                alert("Registration successful!");
-                // Here you can add code to save the new user data
-                // For example, sending data to a server
-            } else {
-                alert("Passwords do not match. Please try again.");
-            }
-        });
-
-        // Handle Contact Form Submission
-        document.getElementById("contact-form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent form from submitting
-
-            const name = document.getElementById("contact-name").value.trim();
-            const email = document.getElementById("contact-email").value.trim();
-            const subject = document.getElementById("contact-subject").value.trim();
-            const message = document.getElementById("contact-message").value.trim();
-
-            if (name && email && subject && message) {
-                alert("Your message has been sent successfully!");
-                // Here you can add code to send the contact message to a server
-                // For example, using fetch API or XMLHttpRequest
-            } else {
-                alert("Please fill in all fields.");
-            }
-        });
-
-        // Show the selected container and hide others
         function showContainer(containerId) {
-            const containers = document.querySelectorAll(".container");
+            const containers = document.querySelectorAll('.container');
             containers.forEach(container => {
-                container.classList.remove("active");
+                container.classList.remove('active');
             });
-            document.getElementById(containerId).classList.add("active");
-            changeBackground(containerId);
-            
-            // Close the navigation menu on mobile after selection
-            const navMenu = document.getElementById('nav-menu');
-            if (navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
+            document.getElementById(containerId).classList.add('active');
+            if (window.innerWidth <= 768) {
+                toggleMenu(); // Close the menu on mobile after selecting a link
             }
         }
 
-        // Change Background Image based on the active container
-        function changeBackground(containerId) {
-            let imageUrl;
-            
-            switch (containerId) {
-                case 'home-container':
-                    imageUrl = "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
-                    break;
-                case 'login-container':
-                    imageUrl = "https://images.pexels.com/photos/1181351/pexels-photo-1181351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
-                    break;
-                case 'register-container':
-                    imageUrl = "https://images.pexels.com/photos/1444180/pexels-photo-1444180.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
-                    break;
-                case 'about-container':
-                    imageUrl = "https://images.pexels.com/photos/3757508/pexels-photo-3757508.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
-                    break;
-                case 'contact-container':
-                    imageUrl = "https://images.pexels.com/photos/3288130/pexels-photo-3288130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
-                    break;
-                default:
-                    imageUrl = "https://images.pexels.com/photos/1857342/pexels-photo-1857342.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"; // Default image
-                    break;
-            }
-            
-            if (imageUrl) {
-                document.body.style.backgroundImage = `url('${imageUrl}')`;
-            }
+        function toggleMenu() {
+            const nav = document.getElementById('nav-menu');
+            nav.classList.toggle('active');
         }
-
-        // Initialize with home container visible and set background
-        document.addEventListener("DOMContentLoaded", function() {
-            showContainer('home-container');
-        });
     </script>
 </body>
 </html>
