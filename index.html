@@ -262,9 +262,9 @@
     <div class="container" id="login-container">
         <div class="content">
             <h2>Login</h2>
-            <form>
-                <input type="text" placeholder="Username">
-                <input type="password" placeholder="Password">
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
                 <input type="submit" value="Login">
             </form>
         </div>
@@ -328,6 +328,13 @@
             });
             document.getElementById(containerId).classList.add('active');
         }
+
+        // Handle login form submission
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+            // Add login validation here if necessary
+            window.location.href = 'dashboard.html'; // Redirect to dashboard.html on successful login
+        });
     </script>
 </body>
 </html>
