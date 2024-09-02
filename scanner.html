@@ -20,11 +20,14 @@
         h1 {
             color: #333;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         #interactive {
-            width: 640px;
-            height: 480px;
+            width: 100%;
+            max-width: 640px;
+            height: auto;
+            aspect-ratio: 4 / 3;
             border: 2px solid #4CAF50;
             border-radius: 8px;
             background-color: #fff;
@@ -48,7 +51,8 @@
 
         #controls {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             gap: 10px;
             margin-bottom: 20px;
         }
@@ -75,9 +79,10 @@
         }
 
         #scanned-products-container {
-            width: 640px;
+            width: 100%;
+            max-width: 640px;
             max-height: 300px;
-            overflow-y: scroll;
+            overflow-y: auto;
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -98,8 +103,7 @@
             border: 1px solid #ddd;
             border-radius: 4px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
             background-color: #f9f9f9;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -112,6 +116,7 @@
         .quantity-controls {
             display: flex;
             align-items: center;
+            margin-top: 10px;
         }
 
         .quantity-controls button {
@@ -133,6 +138,33 @@
         .quantity {
             font-size: 16px;
             padding: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            #interactive {
+                max-width: 100%;
+                aspect-ratio: auto;
+            }
+
+            #scanned-products-container {
+                max-height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #start-button, #stop-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            .quantity-controls button {
+                font-size: 14px;
+                padding: 4px 8px;
+            }
+
+            .quantity {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
