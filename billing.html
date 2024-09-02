@@ -24,7 +24,8 @@
         }
 
         #billing-container {
-            width: 500px;
+            width: 90%;
+            max-width: 500px;
             background-color: #fff;
             border: none;
             border-radius: 15px;
@@ -71,6 +72,12 @@
         button:active {
             transform: translateY(0);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (min-width: 768px) {
+            #billing-container {
+                width: 500px;
+            }
         }
     </style>
 </head>
