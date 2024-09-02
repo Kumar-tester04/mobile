@@ -20,14 +20,13 @@
     header {
         background: linear-gradient(135deg, #5ABF3F, #4a9c35);
         border: 2px solid #5ABF3F;
-        padding: 20px 40px;
+        padding: 15px 30px;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
         align-items: center;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         border-radius: 10px;
         margin: 20px;
-        transform: rotateX(0deg) rotateY(0deg);
         transition: transform 0.6s;
     }
     header:hover {
@@ -37,12 +36,14 @@
         margin: 0;
         font-family: 'Times New Roman', serif;
         color: #fff;
-        font-size: 2.5em;
+        font-size: 2em;
         text-align: center;
     }
     nav {
         display: flex;
-        gap: 15px;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
     }
     nav a {
         color: #fff;
@@ -51,25 +52,25 @@
         padding: 10px 20px;
         border-radius: 5px;
         background: rgba(0, 0, 0, 0.6);
-        transition: background 0.3s;
+        transition: background 0.3s, transform 0.3s;
     }
     nav a:hover {
         background: #5ABF3F;
-        color: #fff;
+        transform: scale(1.1);
     }
     .container {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-grow: 1;
-        padding: 30px;
+        padding: 20px;
         text-align: center;
     }
     .content {
         background: rgba(0, 0, 0, 0.7);
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        padding: 30px;
+        padding: 20px;
         width: 100%;
         max-width: 800px;
         backdrop-filter: blur(10px);
@@ -113,6 +114,38 @@
         padding: 10px;
         text-align: center;
         color: #5ABF3F;
+    }
+
+    @media (min-width: 768px) {
+        header {
+            flex-direction: row;
+            padding: 20px 40px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+        }
+
+        nav {
+            flex-direction: row;
+            margin-top: 0;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .form-group input {
+            font-size: 1.1em;
+        }
+
+        .form-group button {
+            font-size: 1.1em;
+        }
     }
 </style>
 </head>
@@ -173,4 +206,3 @@ function logout() {
 </script>
 </body>
 </html>
-
