@@ -23,7 +23,8 @@
         }
 
         #cart-container {
-            width: 640px;
+            width: 90%;
+            max-width: 640px;
             max-height: 400px;
             overflow-y: scroll;
             background-color: #fff;
@@ -76,6 +77,12 @@
 
         button:hover {
             background-color: #45a049;
+        }
+
+        @media (min-width: 768px) {
+            #cart-container {
+                width: 640px;
+            }
         }
     </style>
 </head>
