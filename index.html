@@ -39,7 +39,7 @@
             margin: 10px 20px;
             transition: transform 0.3s ease-in-out;
             position: relative;
-            z-index: 10;
+            z-index: 10; /* Ensure header is above content */
         }
         header:hover {
             transform: perspective(600px) rotateX(2deg) rotateY(2deg);
@@ -54,6 +54,7 @@
         nav {
             display: flex;
             gap: 10px;
+            z-index: 11; /* Ensure nav is above content */
         }
         nav a {
             color: #fff;
@@ -63,7 +64,6 @@
             border-radius: 5px;
             background: rgba(0, 0, 0, 0.6);
             transition: background-color 0.3s ease, transform 0.3s ease;
-            z-index: 20;
         }
         nav a:hover {
             background-color: #5ABF3F;
@@ -74,7 +74,7 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
-            z-index: 20;
+            z-index: 12; /* Ensure hamburger is above content */
         }
         .hamburger div {
             width: 25px;
@@ -91,7 +91,7 @@
             align-items: center;
             padding: 20px;
             text-align: center;
-            z-index: 1;
+            z-index: 1; /* Ensure content is below header and nav */
         }
         .container.active {
             display: flex;
@@ -175,7 +175,6 @@
                 display: none;
                 border-radius: 8px;
                 padding: 10px 0;
-                z-index: 20;
             }
             nav.active {
                 display: flex;
@@ -253,35 +252,33 @@
             <ul>
                 <li><strong>Efficiency:</strong> Say goodbye to long checkout lines. With Self-Billing, billing is quick, easy, and hassle-free.</li>
                 <li><strong>Convenience:</strong> Shop at your own pace. Our self-billing system allows you to scan and pay for items effortlessly, right from your smartphone.</li>
-                <li><strong>Innovation:</strong> We're at the forefront of retail technology, constantly evolving to meet the changing needs of both retailers and customers.</li>
-                <li><strong>Customer Satisfaction:</strong> Our solution is designed with the customer in mind, ensuring a smooth and enjoyable shopping experience.</li>
+                <li><strong>Innovation:</strong> We're at the forefront of retail technology, ensuring that you always have access to the latest advancements in the industry.</li>
+                <li><strong>Support:</strong> Our dedicated team is here to assist you every step of the way. We offer comprehensive support to ensure that your self-billing system runs smoothly.</li>
             </ul>
-            <p>Join us on this exciting journey to redefine the retail landscape. Experience the future of shopping with Self-Billing.</p>
         </div>
     </div>
 
     <!-- Login Container -->
     <div class="container" id="login-container">
         <div class="content">
-            <h2>Login to Your Account</h2>
-            <form action="#" method="POST">
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="password" name="password" placeholder="Password" required>
+            <h2>Login</h2>
+            <form>
+                <input type="text" placeholder="Username">
+                <input type="password" placeholder="Password">
                 <input type="submit" value="Login">
             </form>
-            <p>Don't have an account? <a href="#" onclick="showContainer('register-container')">Sign up here</a>.</p>
         </div>
     </div>
 
-    <!-- Registration Container -->
+    <!-- Register Container -->
     <div class="container" id="register-container">
         <div class="content">
-            <h2>Create a New Account</h2>
-            <form action="#" method="POST">
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="tel" name="phone" placeholder="Phone Number" required>
-                <input type="password" name="password" placeholder="Password" required>
+            <h2>Sign Up</h2>
+            <form>
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email">
+                <input type="tel" placeholder="Phone Number">
+                <input type="password" placeholder="Password">
                 <input type="submit" value="Sign Up">
             </form>
         </div>
@@ -291,9 +288,9 @@
     <div class="container" id="about-container">
         <div class="content">
             <h2>About Us</h2>
-            <p>Self-Billing is a cutting-edge retail technology company dedicated to transforming the shopping experience through innovative self-billing solutions. Our platform empowers retailers to streamline operations and delight customers by making checkout faster, more convenient, and more efficient.</p>
-            <p>Our team of experts is committed to continuous innovation, ensuring that our technology remains at the forefront of the retail industry. We believe in a future where shopping is seamless and enjoyable, where customers have the freedom to shop at their own pace, and where retailers can operate with greater efficiency and profitability.</p>
-            <p>We invite you to explore our platform and discover how Self-Billing can revolutionize your retail business.</p>
+            <p>Self-Billing is dedicated to transforming the retail experience by providing cutting-edge solutions that empower both retailers and customers. Our team of experts is passionate about innovation and is always exploring new ways to enhance the shopping experience.</p>
+            <p>We believe in creating a future where shopping is more enjoyable, efficient, and convenient for everyone. Whether you're a retailer looking to improve your operations or a customer seeking a more seamless shopping experience, Self-Billing is here to help.</p>
+            <p>Join us on this exciting journey and discover the future of retail with Self-Billing!</p>
         </div>
     </div>
 
@@ -301,39 +298,35 @@
     <div class="container" id="contact-container">
         <div class="content">
             <h2>Contact Us</h2>
-            <p>We'd love to hear from you! Whether you have questions about our platform, need support, or want to explore partnership opportunities, our team is here to assist you.</p>
-            <p><strong>Email:</strong> support@selfbilling.com</p>
-            <p><strong>Phone:</strong> +123-456-7890</p>
-            <p><strong>Address:</strong> 123 Retail Street, Shopping City, SC 12345</p>
-            <p>Follow us on social media for the latest updates and news:</p>
-            <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">LinkedIn</a></li>
-            </ul>
+            <p>We'd love to hear from you! Whether you have questions about our services, need support, or just want to share your feedback, our team is here to assist you.</p>
+            <form>
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message" rows="5"></textarea>
+                <input type="submit" value="Send Message">
+            </form>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Self-Billing. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <p>&copy; 2024 Self-Billing Retail Solutions. All Rights Reserved.</p>
     </footer>
 
     <script>
+        // Toggle the hamburger menu
+        function toggleMenu() {
+            var navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Show the corresponding container and hide others
         function showContainer(containerId) {
-            const containers = document.querySelectorAll('.container');
-            containers.forEach(container => {
+            var containers = document.querySelectorAll('.container');
+            containers.forEach(function(container) {
                 container.classList.remove('active');
             });
             document.getElementById(containerId).classList.add('active');
-            if (window.innerWidth <= 768) {
-                toggleMenu(); // Close the menu on mobile after selecting a link
-            }
-        }
-
-        function toggleMenu() {
-            const nav = document.getElementById('nav-menu');
-            nav.classList.toggle('active');
         }
     </script>
 </body>
