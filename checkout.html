@@ -10,30 +10,11 @@
             padding: 0;
             height: 100%;
             display: flex;
+            justify-content: center;
+            align-items: center;
             flex-direction: column;
             background-color: #f0f0f0;
             font-family: 'Roboto', sans-serif;
-        }
-
-        header {
-            background: linear-gradient(135deg, #5ABF3F, #4a9c35);
-            border: 2px solid #5ABF3F;
-            padding: 15px 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            margin: 20px;
-            color: #fff;
-        }
-
-        footer {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            text-align: center;
-            color: #5ABF3F;
-            margin-top: auto;
         }
 
         h1 {
@@ -139,27 +120,14 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Self-Billing System</h1>
-        <nav>
-            <!-- Navigation links can go here -->
-        </nav>
-    </header>
-
-    <main>
-        <h1>Checkout</h1>
-        <div id="checkout-container">
-            <p>Total Weight of Purchased Items: <strong><span id="total-weight">0</span> grams</strong></p>
-            <div id="qr-frame">
-                <canvas id="qr-code"></canvas>
-            </div>
-            <button onclick="redirectToThankYou()">Done</button>
+    <h1>Checkout</h1>
+    <div id="checkout-container">
+        <p>Total Weight of Purchased Items: <strong><span id="total-weight">0</span> grams</strong></p>
+        <div id="qr-frame">
+            <canvas id="qr-code"></canvas>
         </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Self-Billing System. All rights reserved.</p>
-    </footer>
+        <button onclick="redirectToThankYou()">Done</button>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
     <script>
