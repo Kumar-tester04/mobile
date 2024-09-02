@@ -15,36 +15,34 @@
         min-height: 100vh;
         background: #333;
         color: #fff;
-        perspective: 1000px; /* Perspective for 3D effects */
     }
     header {
-        background: linear-gradient(135deg, #5ABF3F, #4a9c35); /* Green gradient background */
-        border: 2px solid #5ABF3F; /* Green frame */
-        padding: 20px 40px;
+        background: linear-gradient(135deg, #5ABF3F, #4a9c35);
+        border: 2px solid #5ABF3F;
+        padding: 15px 30px;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
         align-items: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for added depth */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         border-radius: 10px;
         margin: 20px;
-        transform: rotateX(0deg) rotateY(0deg); /* Initial rotation for 3D effect */
         transition: transform 0.6s;
     }
     header:hover {
-        transform: rotateX(-5deg) rotateY(-5deg); /* Rotate on hover for 3D effect */
+        transform: rotateX(-5deg) rotateY(-5deg);
     }
     header h1 {
         margin: 0;
-        font-family: 'Times New Roman', serif; /* Times New Roman font */
-        color: #fff; /* White text color */
-        font-size: 2.5em;
+        font-family: 'Times New Roman', serif;
+        color: #fff;
+        font-size: 2em;
         text-align: center;
-        transform-style: preserve-3d; /* Preserve 3D transformations */
     }
     nav {
         display: flex;
-        gap: 15px;
-        transform-style: preserve-3d; /* Preserve 3D transformations */
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
     }
     nav a {
         color: #fff;
@@ -52,32 +50,29 @@
         font-weight: bold;
         padding: 10px 20px;
         border-radius: 5px;
-        background: rgba(0, 0, 0, 0.6); /* Slightly transparent background */
+        background: rgba(0, 0, 0, 0.6);
         transition: background 0.3s, transform 0.3s;
     }
     nav a:hover {
-        background: #5ABF3F; /* Green background on hover */
-        color: #fff;
-        transform: scale(1.1); /* Scale up on hover for 3D effect */
+        background: #5ABF3F;
+        transform: scale(1.1);
     }
     .container {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-grow: 1;
-        padding: 30px;
+        padding: 15px;
         text-align: center;
-        transform-style: preserve-3d; /* Preserve 3D transformations */
     }
     .content {
         background: rgba(0, 0, 0, 0.7);
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        padding: 30px;
+        padding: 20px;
         width: 100%;
         max-width: 800px;
         backdrop-filter: blur(10px);
-        /* Remove rotation and transition */
     }
     .info-box {
         background: rgba(0, 0, 0, 0.8);
@@ -85,19 +80,18 @@
         padding: 20px;
         margin: 10px 0;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        /* Remove rotation and transition */
     }
     .info-box h3 {
         margin-top: 0;
-        color: #5ABF3F; /* Green color */
+        color: #5ABF3F;
     }
     .start-shopping-button {
         margin-top: 30px;
         width: 80%;
         max-width: 300px;
         padding: 15px;
-        border-radius: 50px; /* Oval shape */
-        background-color: #5ABF3F; /* Green color */
+        border-radius: 50px;
+        background-color: #5ABF3F;
         color: #fff;
         border: none;
         cursor: pointer;
@@ -107,14 +101,38 @@
         transition: background-color 0.3s, transform 0.3s;
     }
     .start-shopping-button:hover {
-        background-color: #4a9c35; /* Slightly darker green for hover effect */
-        transform: scale(1.1); /* Scale up on hover for 3D effect */
+        background-color: #4a9c35;
+        transform: scale(1.1);
     }
     footer {
         background-color: rgba(0, 0, 0, 0.8);
         padding: 10px;
         text-align: center;
-        color: #5ABF3F; /* Green color */
+        color: #5ABF3F;
+    }
+
+    @media (min-width: 768px) {
+        header {
+            flex-direction: row;
+            padding: 20px 40px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+        }
+
+        nav {
+            flex-direction: row;
+            margin-top: 0;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        .content {
+            padding: 30px;
+        }
     }
 </style>
 </head>
@@ -130,7 +148,6 @@
 </header>
 
 <main>
-    <!-- Dashboard container -->
     <section class="container" id="dashboard-container" style="display:block;">
         <div class="content">
             <div class="welcome-message">Welcome to the Self-Billing System!</div>
